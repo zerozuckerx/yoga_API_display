@@ -1,11 +1,14 @@
-const fetchData = fetch("https://yoga-api-nzy4.onrender.com/v1/");
 
-console.log(fetchData);
+// console.log(fetchData);
 
-fetchData
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data.base)
-  })
-
-console.log("Started request");
+async function fetchData(endpoint) {
+  const fetchString = fetch("https://yoga-api-nzy4.onrender.com/v1/" + endpoint);
+  fetchString
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data)
+      // return true
+    })
+  
+  console.log("Started request");
+}
