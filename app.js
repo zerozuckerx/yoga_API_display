@@ -14,7 +14,7 @@ async function fetchData(endpoint) {
       })
       return true
     })
-  
+    .catch((err) => console.error(err))
   console.log("Started request");
 }
 
@@ -23,4 +23,9 @@ function addToContainer(container, item) {
   const itemDiv = document.createElement("div");
   itemDiv.textContent = item;
   containerDiv.appendChild(itemDiv);
+}
+
+function sortArray(arr) {
+  arr.sort();
+  return arr;
 }
