@@ -7,8 +7,17 @@ async function fetchData(endpoint) {
     .then((response) => response.json())
     .then((data) => {
       console.log(data)
+      data.forEach(dataPoint => {
+        console.log(dataPoint);
+      })
       // return true
     })
   
   console.log("Started request");
+}
+
+function addToContainer(container) {
+  let containerDiv = document.querySelector("." + container);
+  console.log(containerDiv);
+
 }
