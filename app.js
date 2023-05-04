@@ -10,6 +10,7 @@ async function fetchData(endpoint) {
       console.log(data)
       data.forEach(dataPoint => {
         console.log(dataPoint);
+        sortedData = sortArray(data);
         addToContainer(".flex", dataPoint.id);
       })
       return true
@@ -27,8 +28,11 @@ function addToContainer(container, item) {
 }
 
 function sortArray(arr) {
-  arr.sort();
-  return arr;
+  let newArr = [];
+  for(let i = 0; i < arr.length; i++) {
+    newArr.push(arr[i]);
+  }
+  console.log(newArr);
 }
 
 fetchData("poses")
