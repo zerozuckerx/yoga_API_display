@@ -30,6 +30,7 @@ function addToContainer(container, item) {
 function sortArray(arr) {
   let newArr = [];
   for(let i = 0; i < arr.length; i++) {
+    if(i = arr[i].id)
     newArr.push(arr[i]);
   }
   console.log(newArr);
