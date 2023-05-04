@@ -10,7 +10,7 @@ async function fetchData(endpoint) {
       console.log(data)
       data.forEach(dataPoint => {
         console.log(dataPoint);
-        addToContainer("flex", dataPoint.id);
+        addToContainer(".flex", dataPoint.id);
       })
       return true
     })
@@ -19,8 +19,9 @@ async function fetchData(endpoint) {
 }
 
 function addToContainer(container, item) {
-  const containerDiv = document.querySelector("." + container);
+  const containerDiv = document.querySelector(container);
   const itemDiv = document.createElement("div");
+  itemDiv.classList.add("poseItem");
   itemDiv.textContent = item;
   containerDiv.appendChild(itemDiv);
 }
@@ -29,3 +30,5 @@ function sortArray(arr) {
   arr.sort();
   return arr;
 }
+
+fetchData("poses")

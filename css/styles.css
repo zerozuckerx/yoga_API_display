@@ -4,3 +4,10 @@
   background-color: lightgreen;
   height: 200px;
 }
+
+.poseItem {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  width: 30px;
+}
