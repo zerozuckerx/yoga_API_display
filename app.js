@@ -8,9 +8,10 @@ async function fetchData(endpoint) {
     .then((response) => response.json())
     .then((data) => {
       console.log(data)
+      //sort array (wrong order from the API)
+      data.sort((a,b) => a.id - b.id)
       data.forEach(dataPoint => {
         console.log(dataPoint);
-        sortedData = sortArray(data);
         addToContainer(".flex", dataPoint.id);
       })
       return true
@@ -25,15 +26,6 @@ function addToContainer(container, item) {
   itemDiv.classList.add("poseItem");
   itemDiv.textContent = item;
   containerDiv.appendChild(itemDiv);
-}
-
-function sortArray(arr) {
-  let newArr = [];
-  for(let i = 0; i < arr.length; i++) {
-    if(i = arr[i].id)
-    newArr.push(arr[i]);
-  }
-  console.log(newArr);
 }
 
 fetchData("poses")
